@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://bdv4joxpv1u0a"]
+
+[ext_resource type="PackedScene" uid="uid://cx82gkkuvqra" path="res://scenes/answer_bar.tscn" id="1_k5sde"]
+[ext_resource type="Script" path="res://scripts/combine_24.gd" id="1_xg8y7"]
+[ext_resource type="PackedScene" uid="uid://depthmv37ux30" path="res://scenes/number_row.tscn" id="2_t0d03"]
+[ext_resource type="PackedScene" uid="uid://nu2x8gc8q38o" path="res://scenes/operator_row.tscn" id="3_v8i88"]
+[ext_resource type="PackedScene" uid="uid://du6ehmods24ag" path="res://scenes/calculator.tscn" id="5_prfaw"]
+[ext_resource type="PackedScene" uid="uid://c3w8wihmp8h8q" path="res://scenes/solver.tscn" id="6_sywsi"]
+[ext_resource type="PackedScene" uid="uid://b3s526qg7wejw" path="res://scenes/round_timer.tscn" id="7_d4f78"]
+
+[node name="Combine24" type="Node2D"]
+script = ExtResource("1_xg8y7")
+
+[node name="Calculator" parent="." instance=ExtResource("5_prfaw")]
+unique_name_in_owner = true
+
+[node name="Solver" parent="." instance=ExtResource("6_sywsi")]
+unique_name_in_owner = true
+
+[node name="AnswerBar" parent="." instance=ExtResource("1_k5sde")]
+unique_name_in_owner = true
+offset_left = 70.0
+offset_top = 517.0
+offset_right = 470.0
+offset_bottom = 617.0
+
+[node name="NumberRow" parent="." instance=ExtResource("2_t0d03")]
+unique_name_in_owner = true
+offset_left = 70.0
+offset_top = 662.0
+offset_right = 470.0
+offset_bottom = 762.0
+
+[node name="OperatorRow" parent="." instance=ExtResource("3_v8i88")]
+unique_name_in_owner = true
+offset_left = 126.0
+offset_top = 793.0
+offset_right = 410.0
+offset_bottom = 935.0
+
+[node name="AnswerLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+offset_left = 120.0
+offset_top = 90.0
+offset_right = 420.0
+offset_bottom = 390.0
+bbcode_enabled = true
+
+[node name="GetAnswer" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 498.0
+offset_top = 920.0
+offset_right = 532.0
+offset_bottom = 954.0
+
+[node name="RoundTimer" parent="." instance=ExtResource("7_d4f78")]
+position = Vector2(31, 35)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 17.0
+offset_top = 920.0
+offset_right = 314.0
+offset_bottom = 956.0
+theme_override_font_sizes/font_size = 26
+text = "Work in progress"
+
+[editable path="AnswerBar"]
+[editable path="NumberRow"]
+[editable path="OperatorRow"]

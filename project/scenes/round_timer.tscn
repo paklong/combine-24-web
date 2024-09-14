@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3s526qg7wejw"]
+
+[ext_resource type="Script" path="res://scripts/round_timer.gd" id="1_uctod"]
+
+[node name="RoundTimer" type="Node2D"]
+script = ExtResource("1_uctod")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_right = 480.0
+offset_bottom = 45.0
+value = 100.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
